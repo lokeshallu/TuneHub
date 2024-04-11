@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+table{
+width:100%;
+border-collapse: collapse;
+text-align: left;
+font-family: sans-serif;
+font-size: 20px;
+}
+td
+{
+color: orange;
+border-bottom: 2px solid red;
+height:50px;
+font-family:sans-serif;
+font-size:18px;
+font-weight:bolder;
+border-color: orange;
+text-shadow: 0.5px 0.5px 0.5px black;
+width: 200px;
+
+}
+
+th
+{
+color: purple;
+border-bottom: 3px solid black;
+height:60px;
+font-weight:bolder;
+text-shadow: 1px 1px 1px black;
+}
+
+iframe {
+	height: 100px;
+	width: 500px;
+}
+audio{
+height:40px;
+width:300px;
+background-color: #f0f0f0;
+border:2px solid orange;
+border-radius: 10px;
+margin-top: 3px;
+
+}
+</style>
+</head>
+<body>
+	<table >
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Artist</th>
+				<th>Genre</th>
+				<th>Play</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="song:${songs}">
+				<td th:text="${song.name}"></td>
+				<td th:text="${song.artist}"></td>
+				<td th:text="${song.genre}"></td>
+				<td >
+				<audio controls th:src="${song.link}" type="audio/mpeg">
+				
+				</audio>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>
